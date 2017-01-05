@@ -1,0 +1,4 @@
+Settings.Host = "ericholton.me";
+GlobalMetadata["Title"] = "Get off my lawn!";
+GlobalMetadata["Description"] = "Musings of an old coder";
+GlobalMetadata["Intro"] = "Things that I have learned and want to remember";
