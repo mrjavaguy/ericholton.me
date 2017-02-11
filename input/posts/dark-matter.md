@@ -2,6 +2,7 @@ Title: Dark Matter
 Published: 12/23/2016
 Tags: career, goals
 ---
+# Dark Matter
 ![Dark Matter Imagined](/assets/images/out-there-dark-matter-videoSixteenByNine600.gif)
 One of my resolutions for the new year is to stop being a [Dark Matter Developer](http://www.hanselman.com/blog/DarkMatterDevelopersTheUnseen99.aspx).
 I have on and off over the years been more and less involved in the developer community. But for the last eight years or so, I have not been involved much at all.
