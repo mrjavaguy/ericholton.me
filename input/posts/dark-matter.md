@@ -1,6 +1,8 @@
 Title: Dark Matter
 Published: 12/23/2016
-Tags: career, goals
+Tags: 
+  - career
+  - goals
 ---
 # Dark Matter
 ![Dark Matter Imagined](/assets/images/out-there-dark-matter-videoSixteenByNine600.gif)

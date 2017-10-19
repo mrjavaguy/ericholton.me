@@ -1,6 +1,9 @@
 Title: The Clean Coder
 Published: 10/15/2017
-Tags: career, books, review
+Tags: 
+  - career
+  - books
+  - review
 ---
 
 # The Clean Coder by Robert (Uncle Bob) C. Martin

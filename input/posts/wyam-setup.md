@@ -1,6 +1,8 @@
 Title: Blog Setup - Wyam
 Published: 01/06/17
-Tags: blog, tools
+Tags: 
+  - blog
+  - tools
 ---
 # Blog Setup
 
