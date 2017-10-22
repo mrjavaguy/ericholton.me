@@ -1,0 +1,15 @@
+.product-thumbnail {
+    border: solid thin #ddd;
+    position: absolute;
+    display: block;
+    width: 210;
+    height: 263;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}

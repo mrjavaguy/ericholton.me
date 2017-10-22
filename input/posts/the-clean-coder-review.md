@@ -5,14 +5,15 @@ Tags:
   - books
   - review
 ---
-
 # The Clean Coder by Robert (Uncle Bob) C. Martin
 
-This book is part of the Robert C. Martin series, it contains his opinionated version of what a software developer (craftsman) should be. I agree with a lot of what he says in the book but I do think he has been been influenced a fair amount by the fact he is a consulant and gets to just leave at the end of the contract. There is a fair amount of advise in the book broken down into a few broad categories, career, development, testing.
+<img alt="" src="https://images-na.ssl-images-amazon.com/images/I/512NzCU0wfL._SX383_BO1,204,203,200_.jpg" class="a-dynamic-image" id="imgBlkFront" width="260px" data-a-dynamic-image="{&quot;https://images-na.ssl-images-amazon.com/images/I/512NzCU0wfL._SX258_BO1,204,203,200_.jpg&quot;:[260,337],&quot;https://images-na.ssl-images-amazon.com/images/I/512NzCU0wfL._SX383_BO1,204,203,200_.jpg&quot;:[385,499]}">
+
+This book is part of the Robert C. Martin series, it contains his opinionated version of what a software developer (craftsman) should be. I agree with a lot of what he says in the book but I do think he has been been influenced a fair amount by the fact he is a consultant and gets to just leave at the end of the contract. There is a fair amount of advise in the book broken down into a few broad categories, career, development, testing.
 
 ## Career
 
-This category is spread out in the book with chapter 1 summarizing a fair amount of the carerr advise. I liked the chapters on *Saying No* and *Saying Yes*, which showed how not quite saying what you mean (being a people pleaser) can turn around a bite you later. One part a had a partial disgrement with "Uncle Bob" was a learning and the employer's responsibility there. He says it is not the employer's responsibility at all. I would say that is true however if you have an employer like that, <strong>leave</strong>, they are not worth your time.
+This category is spread out in the book with chapter 1 summarizing a fair amount of the carerr advise. I liked the chapters on *Saying No* and *Saying Yes*, which showed how not quite saying what you mean (being a people pleaser) can turn around a bite you later. One part a had a partial disagreement with "Uncle Bob" was a learning and the employer's responsibility there. He says it is not the employer's responsibility at all. I would say that is true however if you have an employer like that, <strong>leave</strong>, they are not worth your time.
 
 ## Testing
 
