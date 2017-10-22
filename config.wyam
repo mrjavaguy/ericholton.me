@@ -1,3 +1,6 @@
+#r Blog
+#t CleanBlog
+
 Settings[Keys.Host]= "ericholton.me";
 Settings[BlogKeys.Title] = "Get off my lawn!";
 Settings[BlogKeys.Description] = "Musings of an old coder";
