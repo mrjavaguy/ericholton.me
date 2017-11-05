@@ -3,7 +3,7 @@ Published: 10/28/2017
 Tags: 
   - C#
   - retail
-  - planing
+  - planning
 ---
 # Retail Planning Application
 I have decide that just showing how I am doing the functional exercises would be a little boring. Instead I am going to build an application 
