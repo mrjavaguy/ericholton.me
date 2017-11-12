@@ -18,17 +18,18 @@ class PlanVariable
 {
     private decimal value;
     private bool locked;
-    private string formula;
+    private string name;
 
-    public PlanVariable(string formula, decimal currentValue, bool locked)
+    public PlanVariable(string name, decimal currentValue, bool locked)
     {
         this.value = currentValue;
         this.locked = locked;
-        this.formula = formula;
+        this.name = name;
     }
 
     public decimal Value => value;
     public bool Locked => locked;
+    public string Name => this.name;
 }
 ```
 

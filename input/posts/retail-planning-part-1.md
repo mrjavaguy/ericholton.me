@@ -9,6 +9,7 @@ Tags:
 I have decide that just showing how I am doing the functional exercises would be a little boring. Instead I am going to build an application 
 from the beginning using what I have learned from the [*Functional Programming in C#*](https://www.manning.com/books/functional-programming-in-c-sharp) book.
 The application I will work on is a convertion of an Windows application into a web application, at the same time I will open source the code around it.
+The goal of these excersizes is to create a planning structure capable of handling multiple stores, regions and years, similar to the programs I executed originally for companies like Hot Topic
 
 ## Domain Description
 This application is a planning system for retailers. In this case it for brick and morter stores more than for web based retilers. 
@@ -53,4 +54,4 @@ End of Period Inventory<br />
 
 ## Some architecture decisions
 
-For this I am going to use some library and tools that I have been wanted to learn more about. For the web api I am using ASP.NET MVC Core. For the database, I am going to use Martan with Postgres.
+For this I am going to use some library and tools that I have been wanted to learn more about. For the web api I am using ASP.NET MVC Core. For the database, I am going to use [Marten](http://jasperfx.github.io/marten/) with Postgres.
