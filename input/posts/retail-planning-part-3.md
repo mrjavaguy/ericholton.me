@@ -4,6 +4,8 @@ Tags:
   - C#
   - retail
   - planning
+  - unit testing
+  - acceptance testing
 ---
 # Code Available 
 The source for this project is available now on [GitHub](https://github.com/mrjavaguy/retailplanner)
