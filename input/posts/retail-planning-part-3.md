@@ -5,8 +5,8 @@ Tags:
   - retail
   - planning
 ---
-# Code Avaialble
-The source for this project is availible now on [GitHub](https://github.com/mrjavaguy/retailplanner)
+# Code Available 
+The source for this project is available now on [GitHub](https://github.com/mrjavaguy/retailplanner)
 
 ## Testing Unit
 We are going to use TDD/BDD for testing this project as we are building it. Here are some of the basic tests for the `PlanVariable` class. As you can see from the unit test class below, I have decided to use [xUnit](https://xunit.github.io/).
@@ -60,8 +60,8 @@ We are going to use TDD/BDD for testing this project as we are building it. Here
     }
 ```
 
-# Acceptence Testing
-For acceptence testing, we are going to use [StoryTeller](http://storyteller.github.io/). For now until we get more code, the tests look similar to the unit tests.
+# Acceptance Testing
+For acceptance testing, we are going to use [StoryTeller](http://storyteller.github.io/). For now until we get more code, the tests look similar to the unit tests.
 
 ``` csharp
     public class PlanVariableFixture : Fixture
@@ -99,6 +99,6 @@ For acceptence testing, we are going to use [StoryTeller](http://storyteller.git
     }
 ```
 
-The results of the acceptence tests 
+The results of the acceptance tests:
 
 ![StoryTellerPlanVariable](/assets/images/StoryTellerPlanVariable.png)
