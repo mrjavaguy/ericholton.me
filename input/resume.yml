@@ -1,0 +1,165 @@
+basics:
+  name: 'Eric Holton'
+  label: 'Software Development Engineer Lead'
+  email: eric.holton@gmail.com
+  phone: '(206) 801-0861'
+  website: 'http://ericholton.me'
+  summary: 'Professional lead software developer with career focus on developing/testing leading-edge software products built on a foundation of Microsoft tools, technologies and platforms. Spearheading software development teams to successful outcomes on multiple projects. Current focus on developing revolutionary new products, with emphasis on the following technologies'
+  location:
+    address: '20126 7th Ave NE'
+    postalCode: 'WA 98155'
+    city: Shoreline
+    countryCode: US
+    region: Washington
+  profiles:
+    -
+      network: Twitter
+      username: mrjavaguy
+      url: 'https://twitter.com/mrjavaguy'
+    -
+      network: GitHub
+      username: mrjavaguy
+      url: 'https://github.com/mrjavaguy'
+    -
+      network: stack-overflow
+      username: mrjavaguy
+      url: 'https://stackoverflow.com/users/7138/mrjavaguy'
+work:
+  -
+    company: IQVIA
+    position: 'Software Developer Lead'
+    website: 'http://iqvia.com'
+    startDate: '2013-07-23'
+    summary: 'Leading software development team on adding functionality to Salesforce Marketing Cloud to support the pharmaceutical companies.'
+    highlights:
+      - 'Lead team in extending Nexxus Marketing to support a new complex hierarchy of data needed by pharmaceutical companies.'
+      - 'Lead team in improving the report engine used by Nexxus Marketing resulting in reports displaying to customers 1000% faster. This included creating a workflow engine that transformed transactional data into a star schema and automated the deployment/upgrading of the Tableau servers.'
+      - 'Built first continuous integration system used in the Seattle office using Jenkins and Layer0 resulting in a more reliable and faster deployment of new code to production.'
+      - 'Assisted team in globalization of Nexxus Marketing, resulting in a 25% increase in customers.'
+  -
+    company: Microsoft
+    position: 'Software Development Engineer II'
+    website: 'http://microsoft.com'
+    startDate: '2008-08-04'
+    endDate: '2013-06-18'
+    summary: 'Full stack developer on SkyDrive (OneDrive).'
+    highlights:
+      - 'Designed custom internal proxying system for tracing user requests across multiple systems.'
+      - 'Assisted in developing a Rest API for both internal and external consumption on SkyDrive.'
+      - 'Improved deployment systems for multiple websites including SkyDrive, Devices, and Profile'
+      - 'Developed a web pipeline akin to Facebook’s BigPipe using ASP.NET MVC 3.0 and Reactive Extensions resulting a faster display of the Windows Live websites.'
+      - 'Development of a Silverlight application to upload photos from Hotmail to SkyDrive, including writing a JPEG encoder in C# for Silverlight.'
+      - 'Converted multiple sites on Windows Live to use ASP.NET MVC'
+      - 'Designed and developed a streaming zip service, used to download multiple files from Skydrive. As each file was read from the backing database, the service would compression the file on the fly and send to the user. This prevented timeouts when downloading multiple files.'
+  -
+    company: 'Falafel Software'
+    position: 'Senior Software Engineer'
+    website: 'https://www.falafel.com/'
+    startDate: '2008-01-01'
+    endDate: '2008-05-31'
+    summary: 'Full stack developer of training web site.'
+    highlights:
+      - 'Development of C# ASP.NET 2.0 website (www.testcompletetv.com).'
+      - 'Created Screencasts for TestCompleteTV.'
+      - 'Co-Author of “TestComplete Made Easy” book used in training program for TestComplete.'
+      - 'Provided on-site training in TestComplete to multiple customers.'
+  -
+    company: AutomatedQA
+    position: 'Architect and Chief Evangelist'
+    website: 'https://smartbear.com/'
+    startDate: '2005-01-01'
+    endDate: '2008-12-31'
+    summary: 'Guided in the development of new features, interface to customer.'
+    highlights:
+      - 'Development of Plug-ins that added additional functionality for TestComplete'
+      - 'Development of Training Material including design/development of sample applications in Delphi, C# and ASP.NET.  Also development of other training aids – PowerPoint and Handouts.'
+      - 'Provided on-site training in TestComplete to multiple customers worldwide.'
+      - 'Provided sales support including web demonstration and running technical conference booths.'
+      - 'Presenter at technical conferences.'
+  -
+    company: 'Holton Integration Systems'
+    position: Owner
+    website: 'http://wwww.holtonsystems.com'
+    startDate: '1996-03-18'
+    endDate: '2004-12-31'
+    summary: 'Consultanting Company'
+    highlights:
+      - 'Consultanted for multiple retail clients including HotTopic, BigM, Speedo, Orvis'
+      - 'Business Analysis of sales trends of client and client competitors.'
+      - 'Design/Development of Sales Analysis/Sales Planning tools using Oracle and Excel. '
+      - 'Design/Development of Middle Tier to move data from GERS back office system to Arthur Allocation '
+      - 'Design/Development of Inventory Allocation system in Delphi.'
+volunteer:
+  -
+    organization: FIRST
+    position: Mentor
+    website: 'https://www.firstinspires.org/robotics/frc'
+    startDate: '2013-09-06'
+    summary: 'Providing guidence for high schoolers in building robots.'
+    highlights:
+      - 'Teaching basic programming skills including version control.'
+      - 'Providing instruction in electronics, wiring and soldering.'
+publications:
+  -
+    name: ' Asynchronous Task Execution'
+    publisher: 'US Patent #8713571'
+    releaseDate: '2014-05-29'
+    summary: 'Techniques for asynchronous task execution are described. In an implementation, tasks may be initiated and executed asynchronously, thereby allowing a plurality of calls to be made in parallel. Each task may be associated with a respective timeout that triggers an end to execution of the task. If a timeout for a low priority task expires without completing both the low priority task and a relatively higher priority task, then the low priority task may use the relatively higher priority task to extend execution time of the low priority task in order to allow additional time to perform the low priority task.'
+    website: 'http://www.google.com/patents/US8713571'
+skills:
+  -
+    name: 'Web Development'
+    keywords:
+      - HTML
+      - CSS
+      - Javascript
+      - ASP.NET
+      - 'ASP.NET Core'
+      - Node
+      - React
+  -
+    name: 'General Software Development'
+    keywords:
+      - Git
+      - GitHub
+      - GitLab
+      - Mericurial
+  -
+    name: 'Build Tools'
+    keywords:
+      - MSBuild
+      - GitLab
+      - Cake
+      - Jenkins
+      - 'Team City'
+      - 'Visual Studio Online'
+      - SonarQube
+  -
+    name: 'Deployment Tools'
+    keywords:
+      - GitLab
+      - Layer0
+      - Salt
+      - Terraform
+      - 'Visual Studio Online'
+      - AWS
+      - Azure
+  -
+    name: 'Programming Languages'
+    keywords:
+      - 'C#'
+      - Javascript
+      - SQL
+      - HTML
+      - CSS
+      - 'F#'
+      - Python
+  -
+    name: Databases
+    keywords:
+      - 'Microsoft SQL Server'
+      - Postgres
+      - MySql
+      - Oracle
+      - Aurora
+      - Redshift
