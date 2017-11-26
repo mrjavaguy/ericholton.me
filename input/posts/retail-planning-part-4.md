@@ -12,11 +12,13 @@ Each of the plan variable will raise an event when it value changes. At this poi
 
 ## New Unit Test
 ```csharp
+        [Fact]
         public void EventHappensOnChangedValue()
         {
-            var variable = new PlanVariable(string.Empty, 100, true);
+            var variable = new PlanVariable(string.Empty, 100, false, new List<Action>());
             var eventHappened = false;
-            variable.SubScribe(() => eventHappened = true);
+            variable.Subscripe(() => eventHappened = true);
+            variable.Update(200);
             Assert.True(eventHappened);
         }
 ```
@@ -37,13 +39,14 @@ Each of the plan variable will raise an event when it value changes. At this poi
         [FormatAs("Starting with a locked variable with {startValue}")]
         public void LockedPlanVariable(decimal startValue)
         {
-            variable = new PlanVariable("spec", startValue, true);
+            variable = new PlanVariable("spec", startValue, true, new List<System.Action>());
+            variable.SubScribe(() => eventSubscription = true);
         }
 
         [FormatAs("Starting with a unlocked variable with {startValue}")]
         public void UnlockedPlanVariable(decimal startValue)
         {
-            variable = new PlanVariable("spec", startValue, false);
+            variable = new PlanVariable("spec", startValue, false, new List<System.Action>());
             variable.SubScribe(() => eventSubscription = true);
         }
 
