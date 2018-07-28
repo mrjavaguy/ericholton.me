@@ -1,12 +1,8 @@
 #tool "nuget:https://api.nuget.org/v3/index.json?package=Wyam&version=1.4.1"
 #addin "nuget:https://api.nuget.org/v3/index.json?package=Cake.Wyam&version=1.4.1"
-#addin "Cake.Npm"
 
 DirectoryPath   outputPath = MakeAbsolute(Directory("./output"));
-string          target     = Argument("target", "Generate-Blog"),
-                baseUri    = EnvironmentVariable("KUDU_CLIENT_BASEURI"),
-                userName   = EnvironmentVariable("KUDU_CLIENT_USERNAME"),
-                password   = EnvironmentVariable("KUDU_CLIENT_PASSWORD");
+string          target     = Argument("target", "Generate-Blog");
 
 Task("Clean-Blog")
     .Does(() =>
@@ -24,23 +20,6 @@ Task("Generate-Blog")
         Theme = "CleanBlog",
         OutputPath = outputPath
     });
-});
-
-Task("Kudu-Publish-Blog")
-    .IsDependentOn("Generate-Blog")
-    .WithCriteria(!string.IsNullOrEmpty(baseUri)
-        && !string.IsNullOrEmpty(userName)
-        && !string.IsNullOrEmpty(password)
-    )
-    .Does(()=>
-{
-    IKuduClient kuduClient = KuduClient(
-        baseUri,
-        userName,
-        password);
-
-    kuduClient.ZipDeployDirectory(
-        outputPath);
 });
 
 Task("Deploy")
