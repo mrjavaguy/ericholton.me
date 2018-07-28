@@ -1,24 +1,46 @@
-#tool nuget:?package=Wyam
-#addin nuget:?package=Cake.Wyam
+#tool "nuget:https://api.nuget.org/v3/index.json?package=Wyam&version=1.4.1"
+#addin "nuget:https://api.nuget.org/v3/index.json?package=Cake.Wyam&version=1.4.1"
+#addin "nuget:https://api.nuget.org/v3/index.json?package=Cake.Kudu.Client&version=0.6.0"
 
-var target = Argument("target", "Build");
+DirectoryPath   outputPath = MakeAbsolute(Directory("./output"));
+string          target     = Argument("target", "Kudu-Publish-Blog"),
+                baseUri    = EnvironmentVariable("KUDU_CLIENT_BASEURI"),
+                userName   = EnvironmentVariable("KUDU_CLIENT_USERNAME"),
+                password   = EnvironmentVariable("KUDU_CLIENT_PASSWORD");
 
-Task("Build")
+Task("Clean-Blog")
     .Does(() =>
-    {
-        Wyam();        
-    });
-    
-Task("Preview")
+{
+    CleanDirectory(outputPath);
+});
+
+Task("Generate-Blog")
+    .IsDependentOn("Clean-Blog")
     .Does(() =>
+{
+    Wyam(new WyamSettings
     {
-        Information("Previewing");
-        Wyam(new WyamSettings
-        {
-            Preview = true,
-            Watch = true,
-            Recipe="blog"
-        });        
+        Recipe = "Blog",
+        Theme = "CleanBlog",
+        OutputPath = outputPath
     });
+});
+
+Task("Kudu-Publish-Blog")
+    .IsDependentOn("Generate-Blog")
+    .WithCriteria(!string.IsNullOrEmpty(baseUri)
+        && !string.IsNullOrEmpty(userName)
+        && !string.IsNullOrEmpty(password)
+    )
+    .Does(()=>
+{
+    IKuduClient kuduClient = KuduClient(
+        baseUri,
+        userName,
+        password);
+
+    kuduClient.ZipDeployDirectory(
+        outputPath);
+});
 
 RunTarget(target);
