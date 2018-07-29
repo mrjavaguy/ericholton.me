@@ -14,4 +14,4 @@ Starting on Monday 2018-02-12 to Friday 2018-02-16, IQVia is doing a hack week i
 One nice thing is that we already have a chat bot for slack as the base for this application. I will be given more details about this application during this week.
 
 [Update]
-Or not as things went south with the main application I am working on, so I had no time for the Standup Bot :(.
+Or not as things went south with the main application I am working on, so I had no time for the Standup Bot.
