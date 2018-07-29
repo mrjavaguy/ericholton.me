@@ -2,7 +2,7 @@
 #addin "nuget:https://api.nuget.org/v3/index.json?package=Cake.Wyam&version=1.4.1"
 
 DirectoryPath   outputPath = MakeAbsolute(Directory("./output"));
-string          target     = Argument("target", "Generate-Blog");
+string          target     = Argument("target", "Deploy");
 
 Task("Clean-Blog")
     .Does(() =>
@@ -23,6 +23,7 @@ Task("Generate-Blog")
 });
 
 Task("Deploy")
+    .IsDependentOn("Generate-Blog")
     .Does(() =>
     {
         // Add NETLIFY_TOKEN to your enviornment variables
@@ -38,7 +39,7 @@ Task("Deploy")
             "--header \"Content-Type: application/zip\" "
             + "--header \"Authorization: Bearer " + token + "\" "
             + "--data-binary \"@output.zip\" "
-            + "--url https://api.netlify.com/api/v1/sites/yoursite.netlify.com/deploys");
+            + "--url https://api.netlify.com/api/v1/sites/peaceful-keller-9f51f6.netlify.com/deploys");
     });
 
 Task("Preview")
