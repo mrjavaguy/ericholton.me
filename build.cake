@@ -18,7 +18,11 @@ Task("Generate-Blog")
     {
         Recipe = "Blog",
         Theme = "CleanBlog",
-        OutputPath = outputPath
+        OutputPath = outputPath,
+        Settings = new Dictionary<string, object> 
+        {
+            { "Keys.LinksUseHttps", true }
+        }
     });
 });
 
