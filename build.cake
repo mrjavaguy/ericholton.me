@@ -41,4 +41,16 @@ Task("Deploy")
             + "--url https://api.netlify.com/api/v1/sites/yoursite.netlify.com/deploys");
     });
 
+Task("Preview")
+    .Does(() =>
+    {
+        Information("Previewing");
+        Wyam(new WyamSettings
+        {
+            Preview = true,
+            Watch = true,
+            Recipe="blog"
+        });        
+    });    
+
 RunTarget(target);
