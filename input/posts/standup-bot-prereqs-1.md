@@ -1,5 +1,5 @@
 Title: Building a Stand Up Bot for Slack - Prereqs
-Published: 08/19/2018
+Published: 08/19/2019
 Tags: 
   - Open-faas
   - Slack
@@ -12,9 +12,9 @@ A while back for hack week at work, I started working on a Stand up bot for Slac
 
 ## Functions everywhere
 
-I will be building this with each part of the bot as a separtate function. These function will be hosted in [Open-faas](https://{need url}).
+I will be building this with each part of the bot as a separtate function. These function will be hosted in [Open-faas](https://www.openfaas.com/).
 
-### Prerequests
+### Prerequisites
 
 - A Kubernetes Cluster
 - Helm
