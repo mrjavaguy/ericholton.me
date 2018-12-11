@@ -45,3 +45,11 @@ Parse the input into a tree and use a [recursive algorithm](https://en.wikipedia
 ## Day 9: Marble Mania
 
 This was fairly easy to solve using a [circular buffer](https://golang.org/pkg/container/ring/) and following the steps outlined by the puzzle.
+
+## Day 10: The Stars Align
+
+For this puzzle, if you examine the start point and the velocity you can get the approximate second that the stars align and then just move forward to almost that time and find the nearest minimum bounding box at that time.
+
+## Day 11: Chronal Charge
+
+I started this puzzle with brute forcing the problem but the second part required me to think more as it was taking forever to run. By using [summed area table](https://en.wikipedia.org/wiki/Summed-area_table) algorithm, it return in under a second.
