@@ -53,3 +53,44 @@ For this puzzle, if you examine the start point and the velocity you can get the
 ## Day 11: Chronal Charge
 
 I started this puzzle with brute forcing the problem but the second part required me to think more as it was taking forever to run. By using [summed area table](https://en.wikipedia.org/wiki/Summed-area_table) algorithm, it return in under a second.
+
+## Day 12: Subterranean Sustainability
+
+This was a variation of Conway's game of life for part one. Part two required the answer to part one plus some math (in my case first find the # of plant that increase ever 100 generations)
+
+## Day 13: Mine Cart Madness
+
+Train simulation with crashes. Just took time to run.
+
+## Day 14: Chocolate Charts
+
+Grind out the numbers and return the right set to right for part1 and to the left for part 2
+
+## Day 15: Beverage Bandits
+
+A half-ass RPG, help those elves to survive against those goblins. This one kicked my but for a while as I had not correctly defined my `Less` function for finding the best location to move a combatant toward. Before fixing, it seem like I was getting a random output, but go's `heap.Fix` does not guaranty the order of equal items.
+
+## Day 16: Chronal Classification
+
+Figure out how to translate machine code to assembler and then run the assembler code.
+
+## Day 17: Reservoir Research
+
+Falling water, water does not behave this way..., recursion is your friend.
+
+## Day 18: Settlers of The North Pole
+
+Another variation of Conway's game of Life, this time in 2D. Find the repeating pattern.
+
+## Day 19: Go With The Flow
+
+Oh the Elven assembly language does contain gotos. Just grind it out for part 2.
+
+## Day 20: A Regular Map
+
+Using regular expression to generated a maze and then solve the maze. 
+
+## Day 21: Chronal Conversion
+
+More Elven assembly, this one was easier to figure out the program by hand and then hard code the exit criteria.
+
