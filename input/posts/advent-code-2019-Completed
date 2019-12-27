@@ -3,4 +3,6 @@ Published: 12/25/2019
 Tags: 
   - C#
 ---
-For Day 23, I had to add some delays to my async code to allow other threads to run. I really should investigate this more as it should not be necessary
+For Day 23, I had to add some delays to my async code to allow other threads to run. I really should investigate this more as it should not be necessary.
+
+Overall, I felt that things went fairly well for this year. I am going refactor some of my code a bit.
