@@ -1,718 +1,1285 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
-  <title>Eric Holton</title>
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-  <style>body, html {
-  padding-top:2.5em;
-  margin:0;
-  background-color:#fafafa;
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<title>Eric Holton</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<style>/********************************************
+* 	reset from
+* 	http://meyerweb.com/eric/tools/css/reset/
+*******************************************/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
 }
 
-.note {
-  display:block;
-  position: absolute;
-  top:10px;
-  left:10px;
-
-  font-family: "Open Sans";
-  font-size: 0.6em;
-}
-
-.new {
-  background-color: #81C784;
-
-  border: 1px solid #757575;
-  padding: 1px;
-  border-radius: 4px;
-
-}
-
-/* Header */
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
 
-header {
-  width:100%;
-  vertical-align: middle;
-  text-align: center;
- 
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-.header-content {
-  display: inline-block;
+/* Custom reset */
+.main-summary p,
+#publications .item,
+#skills .item,
+#languages .item,
+#references .item,
+#interests .item {
+	margin: 0;
 }
 
-.pic {
-  margin: 0 auto;
-  margin-top:-2.5em;
-  
-  border-radius:10em;
-  height:4em;
-  width:4em;
-  
-  border: 2px solid #e0e0e0;
-  transition : all 0.5s linear;
-  
+/****************
+*		SMARTPHONES
+****************/
+em {
+	color: #757575;
 }
 
-@-webkit-keyframes wiggle {
-  0%   {
-    transform: rotate(0deg);
-  }
-  25%  {
-    transform: rotate(-30deg);
-  }
-  50%  {
-    transform: rotate(15deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+p {
+	margin: 1em 0;
 }
 
-.pic:hover {
-  /*Webkit fix*/
-  -webkit-transform: translateZ(0);
-  
-  cursor:pointer;
-  
-  -webkit-animation: wiggle 0.7s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+blockquote {
+	margin: 0;
+	margin-bottom: 1em;
 }
 
-.header-text {
-  margin-top:0.5em;
-  margin-left:1em;
+strong {
+	font-weight: 700;
+	font-size: 1.1em;
 }
 
-header p {
-  text-align:center;
-  font-family: "Merriweather";
-  
-  margin:0;
-  
-  color: #212121;
+ul {
+	margin-top: 0.5em;
 }
 
-.first-name {
-   font-size: 1.05em;
+div.item {
+	margin: 1em 0 2em;
+	padding-bottom: 2em;
 }
 
-.subtitle {
-  font-family: "Merriweather";
-  padding-top:.3em;
-  font-size:0.55em;
-  font-weight:500;
-  color: #424242;
+div.item:last-of-type {
+	margin: 0;
+	border-bottom: none;
+	padding-bottom: 0;
 }
 
-/* Information */
+/* Headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 700;
+}
 
-.paper {
-  margin: 0 auto;
-  margin-bottom:1em;
-  
-  background-color:white;
-  width:60%;
-  
-  padding:0.5em 0 0.5em 0;
-  
-  border-top: 1px solid #e0e0e0;
-  border-left: 1px solid #e0e0e0;
-  border-right: 1px solid #e0e0e0;
-  border-bottom: 3px solid #e0e0e0;
-  border-radius:3px;
+h1 {
+	font-size: 2.5rem;
 }
 
-@media(max-width:992px) {
-  .paper {
-    width:80%;
-  }
+h2,
+h3 {
+	font-size: 1rem;
 }
 
-/* Content Part */
+a {
+	color: #eb5f51;
+	text-decoration: none;
+}
 
-.content-wrapper {
-  padding-right:7.25%;
+a:hover {
+	text-decoration: underline;
 }
 
-.content {
-  display:table;
-  width:100%;
-  
-  padding-top:1.5em;
-  
-  /*border-top: 1px solid #eeeeee;*/
+/* Layout */
+body {
+	line-height: 1.6;
+	font-size: 13px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.content:last-child {
-  margin-bottom: 2em;
+#resume {
+	padding: 1rem 0;
+	margin: 1rem auto;
 }
 
-body > div > article > div > section:last-child {
-  padding-bottom:1.5em;
+#header {
+	padding: 0 1em;
+	margin-bottom: 1em;
 }
 
-.row {
-    display:table-row;
+#resume > header div {
+	display: table;
+	padding-left: 0.5em;
 }
-.row div {
-    display:table-cell;
+
+#resume > header div.middle {
+	padding-top: 1.5em;
 }
 
-.content-cat {
-  font-family: "Merriweather";
-  font-variant:small-caps;
-  font-weight:300;
-  letter-spacing: 1px;
-  
-  color: #212121;
-  
-  font-size:0.975em;
-  
-  text-align:center;
-  vertical-align:middle;
+header img {
+	display: block;
+	width: 10em;
+	border-radius: 0.275em;
+	float: right;
+}
 
-  padding-left:6.66%;
-  width:30%;
+header .name {
+	line-height: 1;
 }
 
-.content-cat p {
-  font-size:0.55em;
-  font-weight:600;
-  
-  margin-bottom:0;
+header .label {
+	font-size: 1.5rem;
+	font-weight: 400;
+	color: #757575;
 }
 
-.content-text {
-  border-left:1px solid #e0e0e0;
-  transition: border 0.66s ease-in;
+section:not(.section) {
+	padding: 0.5em 1rem;
 }
 
-.big-text {
-  vertical-align:top;
+section#references {
+	border-bottom: none;
 }
 
-.content-text ul {
-  padding:0;
-  margin:0;
-  margin-top:0.15em;
-  
-  width:85%;
-  margin-left:1.5em;
+section#basics {
+	background: inherit;
+	margin-bottom: 0;
 }
 
-.content-text ul:last-child {
-  margin-bottom:0.5em;
+section#skills {
+	padding-bottom: 0;
 }
 
-.content-text ul li {
-  font-family: "Open Sans";
-  font-size:0.7em;
-  
-  display:inline-block;
-  
+section#education,
+section#work,
+.main-summary section {
+	padding-bottom: 1em;
 }
 
-.content-text ul li:first-child {
-  width:35%;
-  
-  color: #424242;
-  
-  font-weight:600;
+header::after {
+	display: table;
+	content: " ";
+	clear: both;
 }
 
-.content-text ul li a, div.content-text.work-listing.education-listing > p > strong > a {
-  text-decoration: none;
-  color: #0277bd;
+h2.section-title {
+	text-align: left;
+	font-size: 1rem;
+	font-weight: 400;
+	color: #757575;
+	padding: 1em 1rem 0;
+	margin-bottom: 0.1275em;
 }
 
-.content-text ul li a:hover {
-  color:#4fc3f7;
+.date {
+	font-weight: 700;
+	color: #757575;
 }
 
-.work-listing p {
-  font-family: "Open Sans";
-  font-size:0.7em;
-  
-  color: #424242;
-  
-  margin-left:2em;
-  margin-top:0.45em;
-  margin-bottom: 0.45em;
+.position,
+.area,
+.institution {
+	font-weight: 700;
 }
 
-div.content-text.work-listing.education-listing > p:nth-child(2) {
-  margin-top:0.25em;
+#interests .item,
+#languages .item {
+	padding: 0 1em 1em 0;
+	border-bottom: none;
 }
 
-.work-listing .highlight {
-  font-family: "Open Sans";
-  font-size:0.7em;
-  font-weight:400;
-  
-  color: #424242;
-  
-  margin-left:3.25em;
-  padding-left:0.5em;
-  
-  border-left:1px solid #e0e0e0;
-  
+.website::before {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-decoration: none;
+	min-width: 1.25em;
+	margin-right: 0.25em;
+	text-align: center;
+	content: "\f14c";
 }
 
-.education-listing > .heading {
-  font-weight:600;
-  
-  margin-top:0.75em;
-  margin-left:2em;
+#profiles,
+#skills,
+#interests,
+#languages {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
+	padding-bottom: 1em;
 }
 
-.education-listing > .highlight {
-  margin-left:3.25em;
+#profiles,
+#location {
+	box-shadow: none;
+	padding: 0;
 }
 
-.highlight {
-  transition: border .33s ease-in;
+#profiles .item {
+	margin: 0;
+	padding: 0;
+	padding-right: 1em;
+	border-bottom: none;
 }
 
-.profiles-listing ul li, .profiles-listing ul li:first-child {
-  width:32%;
-  font-weight: normal;
+#interests ul {
+	margin-top: 0.5em;
 }
 
-.work-content, .education-content {
-  padding-top: .75em;
+#publications .name {
+	font-style: italic;
 }
 
-section.content.education-content > div > div.content-cat {
-  vertical-align: top;
+.courses li,
+.keywords li {
+	display: inline-block;
+	background: #f0f0f0;
+	font-size: 0.9em;
+	line-height: 1;
+	color: #333;
+	padding: 0.4em 0.8em;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-radius: 3px;
 }
 
-div.content-text.skills-listing > p {
-  font-family: "Open Sans";
-  font-size:0.7em;
-  font-weight:400;
+#publications .date {
+	font-weight: normal;
+	color: #000;
+}
 
-  margin-left: 2em;
-  margin-top: 0.45em;
-  margin-bottom: 0.45em;
+#skills .item {
+	min-width: 15em;
+	padding: 0 0.5em 0.8em 0;
+	border-bottom: none;
 }
 
-div.content-text.skills-listing > p > {
-  color:#212121;
+/* Skills chart */
+#skills .level .bar {
+	border: 1px solid #ddd;
+	display: block;
+	width: 10em;
+	height: 5px;
+	margin: 0em 0 1em 0;
+	position: relative;
 }
 
-@media screen and (max-width: 600px) {
-  body, html {
-    padding-top: 30px;
-  }
+#skills .level .bar::after {
+	position: absolute;
+	content: " ";
+	top: 0;
+	left: 0;
+	background: black;
+	height: 5px;
+}
 
-  .paper {
-    width:95%;
-  }
+#skills .level.beginner .bar::after {
+	background: #eb5f51;
+	width: 2.5em;
+}
 
-  .row div {
-    display: block;
-  }
+#skills .level.intermediate .bar::after {
+	background: #ffdf1f;
+	width: 5em;
+}
 
-  .content-cat {
-    width: 100%;
-  }
+#skills .level.advanced .bar::after {
+	background: #59c596;
+	width: 7.5em;
+}
 
-  .content-text ul li {
-    width: 100%;
-  }
+#skills .level.master .bar::after {
+	background: #5cb85c;
+	width: 10em;
+}
 
-  .content-text ul li:first-child {
-    width: 100%;
-  }
-  
-  .education-listing > .highlight {
-    margin-left: 30px;
-  }
-}</style>
-  <style media="print">
-body, html {
-  background-color: white;
-  padding-top: 1.5em;
+#references .item {
+	padding-left: 1em;
+	border-left: 5px solid #eb5f51;
 }
 
-.paper {
-  width:100%;
-  border: 0;
+.fa.social {
+	margin-right: 0.25em;
+	font-size: 1.1em;
+}
 
-  padding-top: 0;
+/* Social Media Brand Colors */
+.google-plus {
+	color: #dd4b39;
 }
 
-header p {
-  font-size: 1.3em;
+.tumblr {
+	color: #32506d;
 }
 
-.subtitle {
-  font-size: 0.7em;
+.foursquare {
+	color: #0072b1;
 }
 
-.header-pic {
-  float:left;
+.facebook {
+	color: #3b5998;
 }
 
-.profiles {
-  display:none;
+.linkedin {
+	color: #007bb6;
 }
 
-.content {
-  page-break-inside:avoid; 
-  page-break-after:auto;
+.pinterest {
+	color: #cb2027;
 }
 
-.header-text {
-  float:left;
-  margin-top: -1.6em;
+.dribbble {
+	color: #ea4c89;
 }
 
-.content-wrapper > .content:first-child {
-  padding-top: 2em;
+.instagram {
+	color: #517fa4;
 }
 
-.content:last-child {
-  padding-bottom: 0;
+.twitter {
+	color: #00aced;
 }
 
-.content-cat {
-  width:33%;
-  color:black;
-  text-align: left;
+.soundcloud {
+	color: #ff3a00;
 }
 
-.content-cat p {
-  font-size:0.6em;
-  font-weight: 600;
+.wordpress {
+	color: #21759b;
 }
 
-header p, .content-text, .work-listing p, .content-text ul li:first-child, .work-listing .highlight, .content-text.skills-listing > ul > li > .highlight {
-  color:black;
+.youtube {
+	color: #bb0000;
 }
 
-.content-text.skills-listing > ul > li span, .subtitle {
-  color:#212121;
+.github {
+	color: #171515;
 }
 
-.content-text ul:last-child {
-  margin-bottom: 0.25em;
+.stack-overflow {
+	color: #828386;
+	position: relative;
 }
 
-.content-text ul li:first-child {
-  width:50%;
+.flickr {
+	color: #ff0084;
 }
 
-.profiles-listing ul li:first-child {
-  width:32%;
+.stack-overflow::after {
+	position: absolute;
+	left: 0;
+	content: "\f16c";
+	color: #f68a1f;
+	overflow: hidden;
+	height: 40%;
 }
 
-div.content-text.skills-listing > ul > li {
-  width:33%;
+.duration {
+	font-size: 12px;
 }
 
-.work-listing p {
-  margin-bottom: 0.1em;
+.work-highlights {
+	padding-left: 20px;
+	list-style-type: circle;
 }
 
-div.content-text.skills-listing > ul > li > p {
-  margin-top: 0.4em;
-  margin-bottom: 0.5em;
+.position {
+	font-size: 12px;
 }
 
-div.content-text.skills-listing > ul > li {
-  padding-left: 1.5em;
+.summary-content p {
+	margin-bottom: 10px;
 }
 
-div.content-text.skills-listing > ul > li:first-child {
-  padding-left: 2em;
+.summary-content p:last-child {
+	margin-bottom: 0;
 }
 
-.note {
-  display:none;
+/******************
+*		HELPER CLASSES
+******************/
+.fa {
+	min-width: 1.25em;
+	margin-right: 0.25em;
+	text-align: center;
 }
 
-.content-text:hover {
-  border-left:1px solid #eeeeee;
+.clear {
+	display: table;
+	clear: both;
 }
+
+/****************
+*		TABLET
+****************/
+@media screen and (min-width: 602px) {
+	#resume {
+		width: 550px;
+		margin: 0 auto;
+	}
+	section > header > div {
+		float: left;
+	}
+
+	section > header > h3 {
+		float: left;
+	}
 
-.content-text ul li a:hover {
-  color:#4fc3f7;
+	section > header > .date {
+		float: right;
+		line-height: 1.3;
+	}
+
+	.duration {
+		font-size: 12px;
+		float: right;
+	}
 }
+
+/****************
+*		LAPTOP
+****************/
+@media screen and (min-width: 1025px) {
+	body {
+		background: #f2f2f2;
+	}
+
+	#resume {
+		width: 650px;
+		padding: 3em;
+		margin: 3em auto;
+		background: #fff;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+	}
+
+	.section {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-flex-flow: row wrap;
+		flex-flow: row wrap;
+		-webkit-justify-content: space-between;
+		justify-content: space-between;
+		margin-bottom: 1em;
+		margin-top: 1em;
+		border-bottom: 1px solid #eee;
+	}
+
+	.section:last-of-type {
+		border-bottom: none;
+		margin-bottom: 0;
+	}
+
+	section > header {
+		line-height: 1;
+		padding-bottom: 1em;
+	}
+
+	h2.section-title {
+		line-height: 1.1;
+		padding-top: 0;
+	}
+
+	section:not(.section) {
+		width: 34.5em;
+		padding: 0 1em 1em 0;
+		margin-top: 0;
+		border: none;
+	}
+
+	section p {
+		margin: 0;
+	}
+
+	section#basics {
+		width: auto;
+		padding-top: 1em;
+		padding-left: 1em;
+		padding-bottom: 0;
+		border-top: 1px solid #eee;
+		border-bottom: 1px solid #eee;
+	}
+
+	#profiles .item {
+		padding-bottom: 1em;
+	}
+
+	div {
+		padding: 0;
+	}
+
+	#skills .item {
+		padding-left: 0;
+		margin-top: 0;
+	}
 
-.highlight:hover, .content-text.skills-listing > ul > li > .highlight:hover {
-  border-left:1px solid #eeeeee;
+	div.item {
+		margin-top: 0;
+		border-bottom: 1px solid #eee;
+	}
 }
+</style>
 
-.big-text {
-  padding-top: 0;
-}</style>
-</head>
 <body>
-  <div class="resume-wrapper">
-    <article class="paper">
-        <header>
-          <div class="header-content">
-            <div class="header-text">
-              <p>
-                Eric Holton
-              </p>
-              <p class="subtitle">Software Development Manager/Software Architect</p>
-            </div>
-          </div>
-        </header>
-        <div class="content-wrapper">
-          <!-- CONTACT -->
-          <section class="content">
-            <div class="row">
-              <div class="content-cat">
-                Contact
-              </div>
-              <div class="content-text">
-                  <ul>
-                    <li>Website</li>
-                    <li>http://ericholton.me</li>
-                  </ul>
-                  <ul>
-                    <li>Email</li>
-                    <li>eric.holton@gmail.com</li>
-                  </ul>
-                  <ul>
-                    <li>Phone</li>
-                    <li>(206) 801-0861</li>
-                  </ul>
-              </div>
-            </div>
-          </section>
-          <!-- LOCATION -->
-              <section class="content">
-                <div class="row">
-                  <div class="content-cat">
-                    Location
-                  </div>
-                  <div class="content-text">
-                      <ul>
-                        <li>Address</li>
-                        <li>20126 7th Ave NE</li>
-                      </ul>
-                        <ul>
-                          <li>Postal Code & City</li>
-                          <li>WA 98155 Shoreline</li>
-                        </ul>
-                  </div>
-                </div>
-              </section>
-        
-                <section class="content">
-                  <div class="row">
-                    <div class="content-cat big-text">
-                        Work  Experience
-                          <p>2013-07-23 till today</p>
-                    </div>
-                    <div class="content-text work-listing education-listing">
-                          <p style="margin-top:2.4em;">
-                          <strong>Software Development Manager/Software Architect</strong>
-                          at <strong><a href="http://iqvia.com">IQVIA:</a></strong>
-                        </p>
-                        <p>Managing software development teams on adding functionality to Salesforce Marketing Cloud to support pharmaceutical companies.</p>
-                          <p class="highlight">Managing several teams in multiple locations to successfully delivery software for our customer&#x27;s needs.</p>
-                          <p class="highlight">Designing software systems that are both easy to use and follow the complex rules on pharmaceutical across the global.</p>
-                          <p class="highlight">Lead teams in transition from Nexxus Marketing to developing on Salesforce Marketing Cloud by developing the base libraries used to communicate to Marketing Cloud.</p>
-                          <p class="highlight">Lead team in extending Nexxus Marketing to support a new complex hierarchy of data needed by pharmaceutical companies.</p>
-                          <p class="highlight">Lead team in improving the report engine used by Nexxus Marketing resulting in reports displaying to customers 1000% faster. This included creating a workflow engine that transformed transactional data into a star schema and automated the deployment/upgrading of the Tableau servers.</p>
-                          <p class="highlight">Built first continuous integration system used in the Seattle office using Jenkins and Layer0 resulting in a more reliable and faster deployment of new code to production.</p>
-                          <p class="highlight">Assisted team in globalization of Nexxus Marketing, resulting in a 25% increase in customers.</p>
-                    </div>
-                  </div>
-                </section>
-                <section class="content work-content">
-                  <div class="row">
-                    <div class="content-cat big-text">
-                          <p>2008-08-04 till 2013-06-18</p>
-                    </div>
-                    <div class="content-text work-listing education-listing">
-                          <p>
-                          <strong>Software Development Engineer II</strong>
-                          at <strong><a href="http://microsoft.com">Microsoft:</a></strong>
-                        </p>
-                        <p>Full stack developer on SkyDrive (OneDrive).</p>
-                          <p class="highlight">Designed custom internal proxying system for tracing user requests across multiple systems.</p>
-                          <p class="highlight">Assisted in developing a Rest API for both internal and external consumption on SkyDrive.</p>
-                          <p class="highlight">Improved deployment systems for multiple websites including SkyDrive, Devices, and Profile</p>
-                          <p class="highlight">Developed a web pipeline akin to Facebook’s BigPipe using ASP.NET MVC 3.0 and Reactive Extensions resulting a faster display of the Windows Live websites.</p>
-                          <p class="highlight">Development of a Silverlight application to upload photos from Hotmail to SkyDrive, including writing a JPEG encoder in C# for Silverlight.</p>
-                          <p class="highlight">Converted multiple sites on Windows Live to use ASP.NET MVC</p>
-                          <p class="highlight">Designed and developed a streaming zip service, used to download multiple files from Skydrive. As each file was read from the backing database, the service would compression the file on the fly and send to the user. This prevented timeouts when downloading multiple files.</p>
-                    </div>
-                  </div>
-                </section>
-                <section class="content work-content">
-                  <div class="row">
-                    <div class="content-cat big-text">
-                          <p>2008-01-01 till 2008-05-31</p>
-                    </div>
-                    <div class="content-text work-listing education-listing">
-                          <p>
-                          <strong>Senior Software Engineer</strong>
-                          at <strong><a href="https://www.falafel.com/">Falafel Software:</a></strong>
-                        </p>
-                        <p>Full stack developer of training web site.</p>
-                          <p class="highlight">Development of C# ASP.NET 2.0 website (www.testcompletetv.com).</p>
-                          <p class="highlight">Created Screencasts for TestCompleteTV.</p>
-                          <p class="highlight">Co-Author of “TestComplete Made Easy” book used in training program for TestComplete.</p>
-                          <p class="highlight">Provided on-site training in TestComplete to multiple customers.</p>
-                    </div>
-                  </div>
-                </section>
-                <section class="content work-content">
-                  <div class="row">
-                    <div class="content-cat big-text">
-                          <p>2005-01-01 till 2008-12-31</p>
-                    </div>
-                    <div class="content-text work-listing education-listing">
-                          <p>
-                          <strong>Architect and Chief Evangelist</strong>
-                          at <strong><a href="https://smartbear.com/">AutomatedQA:</a></strong>
-                        </p>
-                        <p>Guided in the development of new features, interface to customer.</p>
-                          <p class="highlight">Development of Plug-ins that added additional functionality for TestComplete</p>
-                          <p class="highlight">Development of Training Material including design/development of sample applications in Delphi, C# and ASP.NET.  Also development of other training aids – PowerPoint and Handouts.</p>
-                          <p class="highlight">Provided on-site training in TestComplete to multiple customers worldwide.</p>
-                          <p class="highlight">Provided sales support including web demonstration and running technical conference booths.</p>
-                          <p class="highlight">Presenter at technical conferences.</p>
-                    </div>
-                  </div>
-                </section>
-                <section class="content work-content">
-                  <div class="row">
-                    <div class="content-cat big-text">
-                          <p>1996-03-18 till 2004-12-31</p>
-                    </div>
-                    <div class="content-text work-listing education-listing">
-                          <p>
-                          <strong>Owner</strong>
-                          at <strong><a href="http://wwww.holtonsystems.com">Holton Integration Systems:</a></strong>
-                        </p>
-                        <p>Consultanting Company</p>
-                          <p class="highlight">Consultant for multiple retail clients including HotTopic, BigM, Speedo, Orvis</p>
-                          <p class="highlight">Business Analysis of sales trends of client and client competitors.</p>
-                          <p class="highlight">Design/Development of Sales Analysis/Sales Planning tools using Oracle and Excel. </p>
-                          <p class="highlight">Design/Development of Middle Tier to move data from GERS back office system to Arthur Allocation </p>
-                          <p class="highlight">Design/Development of Inventory Allocation system in Delphi.</p>
-                    </div>
-                  </div>
-                </section>
+	<div id="resume">
 
-              <section class="content">
-                <div class="row">
-                  <div class="content-cat big-text">
-                      FIRST
-                  </div>
-                  <div class="content-text work-listing">
-                      <p>
-                        Providing guidance for high schoolers in building robots.
-                      </p>
-                        <p class="highlight">Teaching basic programming skills including version control.</p>
-                        <p class="highlight">Providing instruction in electronics, wiring and soldering.</p>
-                  </div>
-                </div>
-              </section>
+			<header id="header">
+
+					<div>
+						<h1 class="name">Eric Holton</h1>
+						<h2 class="label">Software Development Manager/Software Architect</h2>
+					</div>
+			</header>
+
+			<section id="basics">
+					<div id="location">
+						<span class="fa fa-map-marker"></span>
+
+							<span class="address">
+								20126 7th Ave NE,
+							</span>
+
+							<span class="city">
+								Shoreline
+							</span>
+							|
+
+							<span class="region">
+								Washington
+							</span>
+
+							<span class="postalCode">
+								WA 98155
+							</span>
+
+							|
+							<span class="countryCode">
+								United States
+							</span>
+					</div>
+
+				<div id="contact">
+
+						<div class="email">
+							<span class="fa fa-envelope"></span>
+							<a href="mailto:eric.holton@gmail.com">eric.holton@gmail.com</a>
+						</div>
+
+						<div class="phone">
+							<span class="fa fa-phone-square"></span>
+							‪(206) 801-0861‬
+						</div>
+
+				</div>
+
+					<div id="profiles">
+
+							<div class="item">
+
+									<span class="network fa fa-linkedin linkedin"></span>
+
+									<span class="username">
+
+											<span class="url">
+												<a href="https://www.linkedin.com/in/eric-holton-820412/" target="_blank">eric-holton-820412</a>
+											</span>
+
+									</span>
+							</div>
+							<div class="item">
+
+									<span class="network fa fa-twitter twitter"></span>
+
+									<span class="username">
+
+											<span class="url">
+												<a href="https://twitter.com/mrjavaguy" target="_blank">mrjavaguy</a>
+											</span>
+
+									</span>
+							</div>
+							<div class="item">
+
+									<span class="network fa fa-stack-overflow stack-overflow"></span>
+
+									<span class="username">
+
+											<span class="url">
+												<a href="https://stackoverflow.com/users/7138/mrjavaguy" target="_blank">mrjavaguy</a>
+											</span>
+
+									</span>
+							</div>
+					</div>
+			</section>
+
+				<section class="section main-summary">
+					<h2 class='section-title'>About</h2>
+					<section>
+						<div class="summary-content">
+							<p>Professional lead software developer with career focus on developing/testing leading-edge software products built on a foundation of Microsoft tools, technologies and platforms.</p><p>Spearheading software development teams to successful outcomes on multiple projects.</p><p>Current focus on developing revolutionary new products, with emphasis on the following technologies</p>
+						</div>
+					</section>
+
+			</section>
+			</section>
+
+			<section class="section">
+				<h2 class='section-title'>Experience</h2>
+				<section id="work">
+
+						<header>
+
+								<div>
+									<h3 class="name">
+										IQVIA
+									</h3>
+
+										<div class="position">
+											Software Development Manager/Software Architect
+										</div>
+								</div>
+
+							<div class="date">
+									<span class="startDate">
+										November 2018
+									</span>
+
+									<span class="endDate">
+										- Present
+									</span>
+
+								<div>
+									<div class="duration">
+										(2 Years, 9 Months)
+									</div>
+								</div>
+							</div>
+
+						</header>
+
+						<div class="item">
+								<div class="website">
+									<a href="https://www.linkedin.com/company/iqvia/">https://www.linkedin.com/company/iqvia/</a>
+								</div>
+
+								<div class="summary">
+									<p>Managing several teams in multiple location to successfully delivery software for our customer&#x27;s needs.
+Designing software systems that are both easy to use and follow the complex rules on pharmaceuticals across the global.</p>
+								</div>
 
 
+						</div>
+						<header>
 
-          <section class="content">
-            <div class="row">
-              <div class="content-cat">
-                Skills
-              </div>
-              <div class="content-text skills-listing">
-                  <p>
-                    <span class="name">
-                        <strong>
-                          Web Development:
-                        </strong>
-                    </span>
-                      HTML, CSS, Javascript, ASP.NET, ASP.NET Core, Node, React
-                  </p>
-                  <p>
-                    <span class="name">
-                        <strong>
-                          General Software Development:
-                        </strong>
-                    </span>
-                      Git, GitHub, GitLab, Mericurial
-                  </p>
-                  <p>
-                    <span class="name">
-                        <strong>
-                          Build Tools:
-                        </strong>
-                    </span>
-                      MSBuild, GitLab, Cake, Jenkins, Team City, Visual Studio Online, SonarQube
-                  </p>
-                  <p>
-                    <span class="name">
-                        <strong>
-                          Deployment Tools:
-                        </strong>
-                    </span>
-                      GitLab, Layer0, Salt, Terraform, Visual Studio Online, AWS, Azure, Kubernetes, Helm
-                  </p>
-                  <p>
-                    <span class="name">
-                        <strong>
-                          Programming Languages:
-                        </strong>
-                    </span>
-                      C#, Javascript, SQL, HTML, CSS, F#, Python
-                  </p>
-                  <p>
-                    <span class="name">
-                        <strong>
-                          Databases:
-                        </strong>
-                    </span>
-                      Microsoft SQL Server, Postgres, MySql, Oracle, Aurora, Redshift
-                  </p>
-              </div>
-            </div>
-          </section>
+								<div>
+									<h3 class="name">
+										IQVIA
+									</h3>
 
-  <!-- LANGUAGE -->
-            <!-- PROFILES -->
-              <section class="content profiles">
-                <div class="row">
-                  <div class="content-cat">
-                    Profiles
-                  </div>
-                  <div class="content-text profiles-listing">
-                    <ul>
-                          <li>
-                            <a href="https://twitter.com/mrjavaguy" target="_blank">
-                              Twitter
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://github.com/mrjavaguy" target="_blank">
-                              GitHub
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://stackoverflow.com/users/7138/mrjavaguy" target="_blank">
-                              stack-overflow
-                            </a>
-                          </li>
-                    </ul>
-                  </div>
-                </div>
-              </section>
+										<div class="position">
+											Lead Software Developer
+										</div>
+								</div>
+
+							<div class="date">
+									<span class="startDate">
+										August 2013
+									</span>
+
+										<span class="endDate">
+											- November 2018
+										</span>
 
 
-        </div>
-    </article>
-  </div>
+								<div>
+									<div class="duration">
+										(5 Years, 3 Months)
+									</div>
+								</div>
+							</div>
+
+						</header>
+
+						<div class="item">
+								<div class="website">
+									<a href="https://www.linkedin.com/company/iqvia/">https://www.linkedin.com/company/iqvia/</a>
+								</div>
+
+								<div class="summary">
+									<p>Leading software development team on adding functionality to Salesforce Marketing Cloud to support the pharmaceutical companies.
+Lead team in extending Nexxus Marketing to support a new complex hierarchy of data needed by pharmaceutical companies.
+Lead team in improving the report engine used by Nexxus Marketing resulting in reports displaying to customers 1000% faster. This included creating a workflow engine that transformed transactional data into a star schema and automated the deployment/upgrading of the Tableau servers.
+Built first continuous integration system used in the Seattle office using Jenkins and Layer0 resulting in a more reliable and faster deployment of new code to production.
+Assisted team in globalization of Nexxus Marketing, resulting in a 25% increase in customers.</p>
+								</div>
+
+
+						</div>
+						<header>
+
+								<div>
+									<h3 class="name">
+										Microsoft
+									</h3>
+
+										<div class="position">
+											SDE II
+										</div>
+								</div>
+
+							<div class="date">
+									<span class="startDate">
+										August 2008
+									</span>
+
+										<span class="endDate">
+											- June 2013
+										</span>
+
+
+								<div>
+									<div class="duration">
+										(4 Years, 10 Months)
+									</div>
+								</div>
+							</div>
+
+						</header>
+
+						<div class="item">
+								<div class="website">
+									<a href="https://www.linkedin.com/company/microsoft/">https://www.linkedin.com/company/microsoft/</a>
+								</div>
+
+								<div class="summary">
+									<p>Designed custom internal proxying system for tracing user requests across multiple systems.
+Assisted in developing a Rest API for both internal and external consumption on SkyDrive (OneDrive).
+Improved deployment systems for multiple websites including SkyDrive, Devices, and Profile.
+Developed a web pipeline akin to Facebook’s BigPipe using ASP.NET MVC 3.0 and Reactive Extensions resulting a faster display of the Windows Live websites.
+Development of a Silverlight application to upload photos from Hotmail to SkyDrive, including writing a JPEG encoder in C# for Silverlight.
+Converted multiple sites on Windows Live to use ASP.NET MVC
+Designed and developed a streaming zip service, used to download multiple files from Skydrive. As each file was read from the backing database, the service would compression the file on the fly and send to the user. This prevented timeouts when downloading multiple files.</p>
+								</div>
+
+
+						</div>
+						<header>
+
+								<div>
+									<h3 class="name">
+										Falafel Software
+									</h3>
+
+										<div class="position">
+											Senior Software Engineer
+										</div>
+								</div>
+
+							<div class="date">
+									<span class="startDate">
+										January 2008
+									</span>
+
+										<span class="endDate">
+											- May 2008
+										</span>
+
+
+								<div>
+									<div class="duration">
+										(4 Months)
+									</div>
+								</div>
+							</div>
+
+						</header>
+
+						<div class="item">
+								<div class="website">
+									<a href="https://www.linkedin.com/company/falafel-software/">https://www.linkedin.com/company/falafel-software/</a>
+								</div>
+
+								<div class="summary">
+									<p>Development of C# ASP.NET 2.0 website (www.testcompletetv.com) 
+Create Screencasts for TestCompleteTV 
+Co-Author of “TestComplete Made Easy” book used in training program for TestComplete. 
+Provided on-site training in TestComplete to multiple customers.</p>
+								</div>
+
+
+						</div>
+						<header>
+
+								<div>
+									<h3 class="name">
+										AutomatedQA
+									</h3>
+
+										<div class="position">
+											Architect and Chief Evangelist
+										</div>
+								</div>
+
+							<div class="date">
+									<span class="startDate">
+										January 2005
+									</span>
+
+										<span class="endDate">
+											- December 2007
+										</span>
+
+
+								<div>
+									<div class="duration">
+										(2 Years, 11 Months)
+									</div>
+								</div>
+							</div>
+
+						</header>
+
+						<div class="item">
+								<div class="website">
+									<a href="https://www.linkedin.com/company/automatedqa/">https://www.linkedin.com/company/automatedqa/</a>
+								</div>
+
+								<div class="summary">
+									<p>Development of Training Material including design/development of sample applications in Delphi, C# and ASP.NET.  Also development of other training aids – PowerPoint and Handouts. 
+Provided on-site training in TestComplete to multiple customers worldwide. 
+Provided sales support including web demonstration and running technical conference booths. 
+Speaking at technical conferences. 
+Development of Plug-Ins for TestComplete (AutomatedQA’s flagship product for Software Test Automation) in Delphi, C++.</p>
+								</div>
+
+
+						</div>
+						<header>
+
+								<div>
+									<h3 class="name">
+										Hot Topic
+									</h3>
+
+										<div class="position">
+											Consultant
+										</div>
+								</div>
+
+							<div class="date">
+									<span class="startDate">
+										December 1996
+									</span>
+
+										<span class="endDate">
+											- December 2004
+										</span>
+
+
+								<div>
+									<div class="duration">
+										(8 Years, 1 Month)
+									</div>
+								</div>
+							</div>
+
+						</header>
+
+						<div class="item">
+								<div class="website">
+									<a href="https://www.linkedin.com/company/hot-topic/">https://www.linkedin.com/company/hot-topic/</a>
+								</div>
+
+								<div class="summary">
+									<p>Business Analysis of sales trends of client and client competitors. 
+Design/Development of Sales Analysis/Sales Planning tools using Oracle and Excel. 
+Design/Development of Middle Tier to move data from GERS back office system to Arthur Allocation 
+Design/Development of Inventory Allocation system in Delphi. 
+Design/Development of Inventory Allocation system in FoxPro for Mac.</p>
+								</div>
+
+
+						</div>
+
+				</section>
+			</section>
+
+			<section class="section">
+				<h2 class='section-title'>Education</h2>
+				<section id="education">
+
+						<header>
+
+								<h3 class="institution">
+									University of Washington
+								</h3>
+
+							<div class="date">
+									<span class="startDate">
+										1983
+									</span>
+
+										<span class="endDate">
+											- 1987
+										</span>
+
+							</div>
+						</header>
+
+						<div class="item">
+
+								<div class="area">
+									Math Sciences
+								</div>
+
+
+
+						</div>
+				</section>
+
+			</section>
+
+			<section class="section">
+				<h2 class='section-title'>Volunteer</h2>
+				<section id="volunteer">
+
+							<header>
+								<h3 class="company">
+									FIRST
+								</h3>
+
+								<div class="date">
+										<span class="startDate">
+											September 2013
+										</span>
+
+										<span class="endDate">
+											- Present
+										</span>
+
+							</header>
+
+						<div class="item">
+								<div class="position">
+									Team Mentor for 3070 Pronto
+								</div>
+
+								<div class="website">
+									<a href="https://www.linkedin.com/company/355664">https://www.linkedin.com/company/355664</a>
+								</div>
+
+								<div class="summary">
+									<p>Teach high schoolers: 
+Basic programming skills including version control. 
+Electronics, wiring and soldering.</p>
+								</div>
+
+
+						</div>
+				</section>
+			</section>
+
+			<section class="section">
+				<h2 class='section-title'>Awards</h2>
+				<section id="awards">
+
+							<div class="date">
+								29 April 2014
+							</div>
+
+						<div class="item">
+								<div class="title">
+									Patent #: US008713571 Asynchronous Task Execution
+								</div>
+
+								<div class="awarder">
+									US Patent Office
+								</div>
+
+								<div class="summary">
+									<p>Techniques for asynchronous task execution are described. In an implementation, tasks may be initiated and executed asynchronously, thereby allowing a plurality of calls to be made in parallel. Each task may be associated with a respective timeout that triggers an end to execution of the task. If a timeout for a low priority task expires without completing both the low priority task and a relatively higher priority task, then the low priority task may use the relatively higher priority task to extend execution time of the low priority task in order to allow additional time to perform the low priority task.</p>
+								</div>
+						</div>
+				</section>
+			</section>
+
+
+			<section class="section">
+				<h2 class='section-title'>Skills</h2>
+				<section id="skills">
+
+						<div class="item">
+
+								<div class="name">
+									Web Development
+								</div>
+
+
+								<ul class="keywords">
+
+										<li>HTML</li>
+										<li>CSS</li>
+										<li>Javascript</li>
+										<li>ASP.NET</li>
+										<li>ASP.NET Core</li>
+										<li>Node</li>
+										<li>React</li>
+
+								</ul>
+						</div>
+						<div class="item">
+
+								<div class="name">
+									General Software Development
+								</div>
+
+
+								<ul class="keywords">
+
+										<li>Git</li>
+										<li>GitHub</li>
+										<li>GitLab</li>
+
+								</ul>
+						</div>
+						<div class="item">
+
+								<div class="name">
+									Build Tools
+								</div>
+
+
+								<ul class="keywords">
+
+										<li>MSBuild</li>
+										<li>GitLab</li>
+										<li>Cake</li>
+										<li>Jenkins</li>
+										<li>Team City</li>
+										<li>Visual Studio Online</li>
+										<li>SonarQube</li>
+
+								</ul>
+						</div>
+						<div class="item">
+
+								<div class="name">
+									Deployment Tools
+								</div>
+
+
+								<ul class="keywords">
+
+										<li>GitLab</li>
+										<li>Kubernetes</li>
+										<li>Helm</li>
+										<li>Terraform</li>
+										<li>Layer0</li>
+										<li>Salt</li>
+										<li>Visual Studio Online</li>
+										<li>AWS</li>
+										<li>Azure</li>
+
+								</ul>
+						</div>
+						<div class="item">
+
+								<div class="name">
+									Programming Languages
+								</div>
+
+
+								<ul class="keywords">
+
+										<li>C#</li>
+										<li>Javascript</li>
+										<li>SQL</li>
+										<li>HTML</li>
+										<li>CSS</li>
+										<li>F#</li>
+										<li>Python</li>
+
+								</ul>
+						</div>
+						<div class="item">
+
+								<div class="name">
+									Databases
+								</div>
+
+
+								<ul class="keywords">
+
+										<li>Microsoft SQL Server</li>
+										<li>Postgres</li>
+										<li>MySql</li>
+										<li>Snowflake</li>
+										<li>MongoDB</li>
+										<li>Aurora</li>
+										<li>Redshift</li>
+
+								</ul>
+						</div>
+				</section>
+
+			</section>
+
+			<section class="section">
+				<h2 class='section-title'>Languages</h2>
+				<section id="languages">
+
+						<div class="item">
+
+								<div class="language">
+									English
+								</div>
+
+								<div class="fluency">
+									<em>Native speaker</em>
+								</div>
+
+						</div>
+				</section>
+
+			</section>
+
+
+	</div>
 </body>
+
 </html>
