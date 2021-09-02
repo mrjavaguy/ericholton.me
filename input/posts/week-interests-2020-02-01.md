@@ -1,5 +1,5 @@
 
-Title: Goodbye Visual Studio
+Title: Week Interest 2020-02-01
 Published: 01/05/2020
 Tags: 
   - C#
@@ -25,4 +25,4 @@ As part of my learning on Istio
 
 https://andrewlock.net/inserting-middleware-between-userouting-and-useendpoints-as-a-library-author-part-1/
 
-I am currently designing a microservice framework for my work,
+I am currently designing a microservice framework for my work.
