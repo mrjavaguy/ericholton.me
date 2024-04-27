@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Eric Holton</title>
+      <meta name="description" content="Experienced Software Development Manager with a strong focus on backend architecture and development, specializing in building scalable microservices and implementing robust API solutions. Proficient in modern technologies and platforms, with a proven track record of leading development teams to deliver innovative software solutions. Passionate about technology and continuous improvement, with a deep commitment to enhancing user experience through high-quality software design.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap">
+    <style>:root {
+  color-scheme: light dark;
+
+  --color-background: #ffffff;
+  --color-primary: #212529;
+  --color-secondary: #95a5a6;
+  --color-muted: #f4f6f6;
+  --color-accent: #f1c40f;
+  --color-link: #2ecc71;
+
+  --scale-ratio: 1.25;
+  --scale0: 1rem;
+  --scale1: calc(var(--scale0) * var(--scale-ratio));
+  --scale2: calc(var(--scale1) * var(--scale-ratio));
+  --scale3: calc(var(--scale2) * var(--scale-ratio));
+  --scale4: calc(var(--scale3) * var(--scale-ratio));
+  --scale5: calc(var(--scale4) * var(--scale-ratio));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #181a1b;
+    --color-primary: #d1cdc7;
+    --color-secondary: #aaa398;
+    --color-muted: #1e2021;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-primary);
+  display: grid;
+  font: 1em/1.5 Lato, sans-serif;
+  gap: 2em;
+  grid-template-columns:
+    [full-start]
+    1fr
+    [main-start side-start]
+    minmax(min-content, 12em)
+    [side-end content-start]
+    minmax(min-content, 36em)
+    [main-end content-end]
+    1fr
+    [full-end];
+  grid-template-rows: auto [content] 0;
+  margin-bottom: 4em;
+}
+
+body::before {
+  content: '';
+  grid-column: full;
+  grid-row: content;
+}
+
+ol,
+ul {
+  padding-left: 1em;
+}
+
+li + li {
+  margin-top: 0.4em;
+}
+
+li::marker,
+.network {
+  color: var(--color-secondary);
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:focus,
+a:hover {
+  color: var(--color-accent);
+}
+
+h1,
+h2,
+h3,
+h5 {
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--scale5);
+}
+
+h2 {
+  color: var(--color-secondary);
+  font-size: var(--scale4);
+}
+
+h3 {
+  color: var(--color-accent);
+  font-size: var(--scale3);
+  grid-column: side;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: var(--scale2);
+}
+
+h5 {
+  font-size: var(--scale1);
+}
+
+h6 {
+  font-size: var(--scale0);
+}
+
+blockquote {
+  border-left: 0.2em solid var(--color-muted);
+  padding-left: 1em;
+}
+
+cite {
+  color: var(--color-secondary);
+  font-style: inherit;
+}
+
+cite::before {
+  content: '— ';
+}
+
+svg {
+  margin-right: 0.2em;
+  vertical-align: -0.2em;
+}
+
+.masthead {
+  background: var(--color-muted);
+  display: inherit;
+  gap: inherit;
+  grid-column: full;
+  grid-template-columns: inherit;
+  padding: 4em 0;
+  text-align: center;
+}
+
+.masthead > *,
+section {
+  grid-column: main;
+}
+
+.masthead > img {
+  border-radius: 50%;
+  margin: 0 auto;
+  max-width: 12em;
+}
+
+article > * + *,
+blockquote > * + * {
+  margin-top: 0.6em;
+}
+
+.stack {
+  display: grid;
+  gap: 1.5em;
+}
+
+.icon-list {
+  list-style: none;
+  padding: 0;
+}
+
+.grid-list {
+  display: grid;
+  gap: 1em;
+}
+
+.spaced-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.spaced-list::before {
+  border-bottom: 1px solid var(--color-muted);
+  content: '';
+  flex-grow: 1;
+  margin: 0 1em;
+  order: 1;
+}
+
+.spaced-list > :nth-child(2) {
+  order: 2;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.tag-list > li {
+  background: var(--color-muted);
+  margin: 0 0.2em 0.2em 0;
+  padding: 0.2em 0.6em;
+}
+
+@media print, (min-width: 48em) {
+  h3 {
+    text-align: right;
+    margin-bottom: inherit;
+  }
+
+  .masthead {
+    text-align: inherit;
+  }
+
+  .masthead > *,
+  section {
+    grid-column: content;
+  }
+
+  .masthead img {
+    grid-column: side;
+    grid-row: span 2;
+    max-width: 100%;
+  }
+
+  section {
+    display: contents;
+  }
+
+  .grid-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
+  </head>
+  <body>
+      <header class="masthead">
+          <img src="" alt="">
+        <div>
+            <h1>Eric Holton</h1>
+            <h2>Software Development Manager/Software Architect at IQVIA</h2>
+        </div>
+          <article>
+            <p>Experienced Software Development Manager with a strong focus on backend architecture and development, specializing in building scalable microservices and implementing robust API solutions. Proficient in modern technologies and platforms, with a proven track record of leading development teams to deliver innovative software solutions. Passionate about technology and continuous improvement, with a deep commitment to enhancing user experience through high-quality software design.</p>
+          </article>
+        <ul class="icon-list">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Missoula, United States
+              </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:eric.holton@gmail.com">eric.holton@gmail.com</a>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <a href="tel:2068010861">‪(206) 801-0861‬</a>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+              <a href="https://ericholton.me">ericholton.me</a>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  <a href="https://www.linkedin.com/in/eric-holton-820412/">eric-holton-820412</a>
+                <span class="network">(LinkedIn)</span>
+            </li>
+        </ul>
+      </header>
+
+      <section id="work">
+        <h3>Work</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>IQVIA - Software Development Manager/Software Architect</h4>
+                  <span>
+                    <time datetime="2018-11-30">Nov 2018</time> –
+                    Present
+                  </span>
+                </div>
+                <strong></strong>
+              </header>
+                <p>Managing several teams in multiple location to successfully delivery software for our customer's needs.
+    Designing software systems that are both easy to use and follow the complex rules on pharmaceuticals across the global.</p>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>IQVIA - Lead Software Developer</h4>
+                  <span>
+                    <time datetime="2013-08-31">Aug 2013</time> –
+                    <time datetime="2018-11-30">Nov 2018</time>
+                  </span>
+                </div>
+                <strong></strong>
+              </header>
+                <p>Leading software development team on adding functionality to Salesforce Marketing Cloud to support the pharmaceutical companies.
+    Lead team in extending Nexxus Marketing to support a new complex hierarchy of data needed by pharmaceutical companies.
+    Lead team in improving the report engine used by Nexxus Marketing resulting in reports displaying to customers 1000% faster. This included creating a workflow engine that transformed transactional data into a star schema and automated the deployment/upgrading of the Tableau servers.
+    Built first continuous integration system used in the Seattle office using Jenkins and Layer0 resulting in a more reliable and faster deployment of new code to production.
+    Assisted team in globalization of Nexxus Marketing, resulting in a 25% increase in customers.</p>
+            </article>
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Microsoft - SDE II</h4>
+                  <span>
+                    <time datetime="2008-08-31">Aug 2008</time> –
+                    <time datetime="2013-06-30">Jun 2013</time>
+                  </span>
+                </div>
+                <strong></strong>
+              </header>
+                <p>Designed custom internal proxying system for tracing user requests across multiple systems.
+    Assisted in developing a Rest API for both internal and external consumption on SkyDrive (OneDrive).
+    Improved deployment systems for multiple websites including SkyDrive, Devices, and Profile.
+    Developed a web pipeline akin to Facebook’s BigPipe using ASP.NET MVC 3.0 and Reactive Extensions resulting a faster display of the Windows Live websites.
+    Development of a Silverlight application to upload photos from Hotmail to SkyDrive, including writing a JPEG encoder in C# for Silverlight.
+    Converted multiple sites on Windows Live to use ASP.NET MVC
+    Designed and developed a streaming zip service, used to download multiple files from Skydrive. As each file was read from the backing database, the service would compression the file on the fly and send to the user. This prevented timeouts when downloading multiple files.</p>
+            </article>
+        </div>
+      </section>
+      <section id="volunteer">
+        <h3>Volunteer</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Team Mentor for 3070 Pronto</h4>
+                  <span>
+                    <time datetime="2013-09-30">Sep 2013</time> –
+                    <time datetime="2021-09-30">Sep 2021</time>
+                  </span>
+                </div>
+                <strong>FIRST</strong>
+              </header>
+                <p>Teach high schoolers:
+    Basic programming skills including version control.
+    Electronics, wiring and soldering.</p>
+            </article>
+        </div>
+      </section>
+      <section id="education">
+        <h3>Education</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>University of Washington</h4>
+                  <span>
+                    <time datetime="1983-12-31">Dec 1983</time> –
+                    <time datetime="1987-12-31">Dec 1987</time>
+                  </span>
+                </div>
+                  <strong>Math Sciences</strong>
+              </header>
+                
+            </article>
+        </div>
+      </section>
+      <section id="awards">
+        <h3>Awards</h3>
+        <div class="stack">
+            <article>
+              <header>
+                <div class="spaced-list">
+                  <h4>Patent #: US008713571 Asynchronous Task Execution</h4>
+                    <time datetime="2014-04-29">Apr 2014</time>
+                </div>
+                  <span>
+                    Awarded by <strong>US Patent Office</strong>
+                  </span>
+              </header>
+                <p>Techniques for asynchronous task execution are described. In an implementation, tasks may be initiated and executed asynchronously, thereby allowing a plurality of calls to be made in parallel. Each task may be associated with a respective timeout that triggers an end to execution of the task. If a timeout for a low priority task expires without completing both the low priority task and a relatively higher priority task, then the low priority task may use the relatively higher priority task to extend execution time of the low priority task in order to allow additional time to perform the low priority task.</p>
+            </article>
+        </div>
+      </section>
+      <section id="skills">
+        <h3>Skills</h3>
+        <div class="grid-list">
+            <div>
+                <h4>DevOps</h4>
+                <ul class="tag-list">
+                    <li>GitLab</li>
+                    <li>Kubernetes</li>
+                    <li>Helm</li>
+                    <li>Terraform</li>
+                    <li>Docker</li>
+                    <li>GitOps</li>
+                    <li>AWS</li>
+                    <li>Azure</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Web Development</h4>
+                <ul class="tag-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>ASP.NET</li>
+                    <li>ASP.NET Core</li>
+                    <li>Node</li>
+                    <li>React</li>
+                </ul>
+            </div>
+            <div>
+                <h4>General Software Development</h4>
+                <ul class="tag-list">
+                    <li>Git</li>
+                    <li>GitHub</li>
+                    <li>GitLab</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Build Tools</h4>
+                <ul class="tag-list">
+                    <li>MSBuild</li>
+                    <li>GitLab</li>
+                    <li>Cake</li>
+                    <li>SonarQube</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Programming Languages</h4>
+                <ul class="tag-list">
+                    <li>C#</li>
+                    <li>Javascript</li>
+                    <li>SQL</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>F#</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Databases</h4>
+                <ul class="tag-list">
+                    <li>Microsoft SQL Server</li>
+                    <li>Postgres</li>
+                    <li>MySql</li>
+                    <li>Snowflake</li>
+                    <li>MongoDB</li>
+                    <li>Aurora</li>
+                    <li>Redshift</li>
+                </ul>
+            </div>
+        </div>
+      </section>
+      <section id="languages">
+        <h3>Languages</h3>
+        <div class="grid-list">
+            <div>
+                <h4>English</h4>
+              Native speaker
+            </div>
+        </div>
+      </section>
+  </body>
+</html>
