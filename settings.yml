@@ -1,0 +1,4 @@
+Host: ericholton.me
+SiteTitle: Get off my lawn!
+SiteDescription: Musings of an old coder
+Copyright: => @$"All content © {DateTime.Now.Year} Eric Holton" 
