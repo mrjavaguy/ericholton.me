@@ -1,5 +1,5 @@
 Title: Advent of Code 2018
-Published: 12/01/2018
+Published: 1/01/2018
 Tags: 
   - Go
 ---

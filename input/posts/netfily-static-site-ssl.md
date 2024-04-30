@@ -1,29 +1,31 @@
 Title: Moving this site from Azure to Netlify
 Published: 07/28/2018
-Tags: 
+Tags:
   - Blog
   - Netlify
 ---
-# Moving the hosting of this site and HTTPS
-While doing some research on adding HTTPS to my blog on Azure, I stumbled on [Netlify](https://www.netlify.com/). Netlify offers free hosting of static sites with HTTPS, powered by [Let's Encrypt](https://letsencrypt.org/).
 
-## Change to the build script
+# Moving the Hosting of This Site and Adding HTTPS
 
-I add the following code to the cake build script
+In my quest to enhance my blog's security and reduce costs, I discovered [Netlify](https://www.netlify.com/) while researching ways to add HTTPS to my site on Azure. Netlify offers complimentary hosting for static sites and includes HTTPS support via [Let's Encrypt](https://letsencrypt.org/), which was exactly what I needed.
+
+## Changes to the Build Script
+
+To integrate Netlify into my deployment process, I modified the build script in my Cake build system. Here’s the crucial snippet that I added:
 
 ```csharp
 Task("Deploy")
     .IsDependentOn("Generate-Blog")
     .Does(() =>
     {
-        // Add NETLIFY_TOKEN to your enviornment variables
+        // Add NETLIFY_TOKEN to your environment variables
         string token = EnvironmentVariable("NETLIFY_TOKEN");
         if(string.IsNullOrEmpty(token))
         {
             throw new Exception("Could not get NETLIFY_TOKEN environment variable");
         }
 
-        // zip the output directory and upload using curl
+        // Zip the output directory and upload using curl
         Zip("./output", "output.zip", "./output/**/*");
         StartProcess("curl", 
             "--header \"Content-Type: application/zip\" "
@@ -33,10 +35,14 @@ Task("Deploy")
     });
 ```
 
-Then I updated my CI server to call the `Deploy` task.
+This script ensures that after the site is generated, it zips the output directory and uses `curl` to upload the zip file to Netlify using the provided API token. I also updated my Continuous Integration (CI) server to call this `Deploy` task as part of the automated process.
 
-## Benefits
+## Benefits of Moving to Netlify
 
-* Site supports HTTPS
-* Save money every month
-* Simplified deployment
+The transition to Netlify from Azure brought several advantages:
+
+- **HTTPS Support:** By using Let's Encrypt, my site now supports HTTPS out of the box, enhancing security and trust.
+- **Cost Efficiency:** Shifting to Netlify eliminated my hosting costs, as Netlify offers free hosting for static sites.
+- **Simplified Deployment:** The integration of Netlify’s deployment API streamlined the process, making deployments faster and more reliable.
+
+Overall, the move to Netlify not only saved costs but also simplified the deployment process and improved the site's security. I highly recommend Netlify for anyone looking to host static sites efficiently and securely.
