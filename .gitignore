@@ -256,3 +256,7 @@ output/
 tools/
 
 *.zip
+
+.mono/
+
+cache/

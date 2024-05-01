@@ -1,13 +1,12 @@
 Title: Dark Matter
 Published: 12/23/2016
+Image: "/assets/images/out-there-dark-matter-videoSixteenByNine600.gif"
 Tags:
   - career
   - goals
 ---
 
 # Stepping Out of the Shadows: My Commitment to Stop Being a Dark Matter Developer
-
-![Dark Matter Imagined](/assets/images/out-there-dark-matter-videoSixteenByNine600.gif)
 
 Inspired by Scott Hanselman's concept of [Dark Matter Developers](http://www.hanselman.com/blog/DarkMatterDevelopersTheUnseen99.aspx), I've resolved to step out of the shadows in the coming year. For too long, I've been part of the silent majority of developers who remain disengaged from the broader tech community. While I've had periods of greater involvement, the last eight years have seen me retreat into the background.
 
