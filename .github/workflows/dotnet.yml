@@ -20,13 +20,11 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-    - name: setup environment
-      env:
-        NetlifyAccessToken: ${{ secrets.NetlifyAccessToken }}
-
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Test
+    - name: Deploy
+      env:
+        NetlifyAccessToken: ${{ secrets.NetlifyAccessToken }}
       run: dotnet run --no-build -- deploy
