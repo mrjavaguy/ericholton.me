@@ -2,9 +2,7 @@
 
 ## CI/CD
 
-Not Currently Working
-
-Hosted on [Azure DevOps](https://dev.azure.com/mrjavaguy/ericholton.me)
+Using the GitHub action in this repository
 
 ## Deployed
 
