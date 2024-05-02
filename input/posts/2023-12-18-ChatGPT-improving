@@ -1,0 +1,19 @@
+---
+title: Enhancing ChatGPT with Memory Features
+Published: 2023-12-18
+tags:
+  - AI
+  - ChatGPT
+---
+
+# Enhancing ChatGPT with Memory Features
+
+Enhancing ChatGPT's functionality through the integration of a memory component can significantly improve its ability to manage and process information. This addition aims to mitigate common issues such as hallucinations—instances where the AI generates incorrect or misleading information. Here are some strategies I've implemented via the Custom Instructions settings in ChatGPT:
+
+1. **Breakdown Complex Problems:** By instructing ChatGPT to deconstruct complex problems into smaller, manageable steps, and clearly explaining each step, the AI can handle more complex queries more effectively.
+
+2. **Cite Credible Sources:** I've encouraged the AI to support its answers with credible sources. When browsing the internet for information, it's important that ChatGPT includes links to these sources at the end of its responses. This not only enhances the reliability of the information but also ensures that the facts presented are not fabricated.
+
+3. **Clarify Ambiguities:** Whenever a query is unclear or ambiguous, ChatGPT is configured to request more details. This ensures that the responses are more accurate and tailored to the user's actual intent.
+
+By setting these custom instructions, I've tailored ChatGPT to function with a greater degree of accuracy and reliability, enhancing the user experience. For those looking to optimize their interactions with AI, adjusting these settings can lead to more meaningful and precise engagements.
